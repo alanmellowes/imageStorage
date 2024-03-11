@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Images</title>
+</head>
+<body>
+
+<!-- Container for SVG Images -->
+<div id="svgContainer"></div>
+
+<script>
+// Function to load and display SVG images
+function loadSVGImages() {
+    // Array of SVG filenames
+    const svgFiles = ["inTheClassroom1.svg", "learning1.svg", "reflecting1.svg", "startingOff1.svg", "task1.svg"];
+
+    // Reference to the container element
+    const container = document.getElementById("svgContainer");
+
+    // Loop through the SVG files and create img elements
+    svgFiles.forEach((filename, index) => {
+        const img = document.createElement("img");
+        img.src = `images/${filename}`; // Adjust the folder path as needed
+        img.alt = `SVG Image ${index + 1}`;
+        img.style.width = "100px"; // Set the desired width
+        img.style.height = "100px"; // Set the desired height
+        container.appendChild(img);
+    });
+}
+
+// Call the function to load SVG images when the page is loaded
+window.onload = loadSVGImages;
+</script>
+
+</body>
+</html>
